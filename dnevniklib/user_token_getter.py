@@ -135,11 +135,11 @@ class UserToken:
         if self.browser == "firefox":
             options = Options()
             options.headless = True
-            driver = webdriver.Firefox(options=options, executable_path=self.path_to_browser_driver)
+            driver = webdriver.Firefox(options=options, executable_path="./"+self.path_to_browser_driver)
         elif self.browser == "chrome":
             options = ChromeOptions()
             options.headless = True
-            driver = Chrome(options=options, executable_path=self.path_to_browser_driver)
+            driver = Chrome(options=options, executable_path="./"+self.path_to_browser_driver)
         driver.get("https://login.mos.ru/sps/login/methods/password?bo=/sps/oauth/ae?response_type=code%26access_type=offline%26client_id=dnevnik.mos.ru%26scope=openid+profile+birthday+contacts+snils+blitz_user_rights+blitz_change_password%26redirect_uri=https%3A%2F%2Fschool.mos.ru%2Fv3%2Fauth%2Fsudir%2Fcallback")
         time.sleep(2)
         login_input = driver.find_element(By.XPATH, '//*[@id="login"]') # type: ignore
