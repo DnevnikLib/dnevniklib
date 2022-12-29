@@ -141,7 +141,7 @@ class UserToken:
             options.headless = True
             driver = Chrome(options=options, executable_path="./"+self.path_to_browser_driver)
         driver.get("https://login.mos.ru/sps/login/methods/password?bo=/sps/oauth/ae?response_type=code%26access_type=offline%26client_id=dnevnik.mos.ru%26scope=openid+profile+birthday+contacts+snils+blitz_user_rights+blitz_change_password%26redirect_uri=https%3A%2F%2Fschool.mos.ru%2Fv3%2Fauth%2Fsudir%2Fcallback")
-        time.sleep(2)
+        time.sleep(5)
         login_input = driver.find_element(By.XPATH, '//*[@id="login"]') # type: ignore
         login_input.send_keys(self.login)
         password_input = driver.find_element(By.XPATH, '//*[@id="password"]')
