@@ -27,7 +27,7 @@ class Marks:
                             {"name": lesson_, "mark": mark}
                         )
         except KeyError:
-            raise DnevnikLibError("Скорее всего, неверная дата")
+            pass
         return marks
 
     def get_trimester_marks(self, trimester: int, academic_year_id: int = 10):

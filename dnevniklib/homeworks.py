@@ -32,5 +32,5 @@ class Homeworks:
                             }
                         )
         except KeyError:
-            raise DnevnikLibError("Неверная дата")
+            pass
         return homeworks
